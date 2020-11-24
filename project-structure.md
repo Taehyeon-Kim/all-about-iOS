@@ -38,8 +38,8 @@ var window : UIWindow?
 **﹡요약(Summary)**  
 ```
 AppDelegate의 역할이 앱의 생명 주기를 관리하고 앱 상태(App State)의 전환 동안의 작업을 처리하는 것이다.
-하지만 iOS13부터는 'window'의 개념이 'scene`으로 바뀌고' 위의 역할을 더 이상 하지 않게 되었다.
-앱의 생명 주기를 관리하는 것은 뒤에서 설명할 SceneDelegate의 역할이 되었다.
+하지만 iOS13부터는 'window'의 개념이 'scene'으로 바뀌고 위의 역할 중 일부를 하지 않게 되었다.
+앱 UI의 생명 주기를 관리하는 것은 뒤에서 설명할 SceneDelegate의 역할이 되었다.
 ```
 <br>
 
@@ -95,6 +95,29 @@ func sceneWillEnterForeground(_ scene: UIScene)
 ```swift
 func sceneDidEnterBackground(_ scene: UIScene)
 ```
+<br>
 
+**`🍏 ViewController.swift`**  
 
+**뷰(View)에서 처리하는 내용을 담고 있는 클래스 파일이다.**  
+뷰 당 각각의 클래스가 대응되기 때문에, 새롭게 뷰를 만들때마다 클래스 파일도 추가를 해서 연결해주어야 한다.
 
+**1. 주요 역할**
+- 일반적으로 기본 데이터의 변경에 대한 응답으로 뷰의 콘텐츠를 업데이트한다.
+- 뷰와 사용자 상호 작용에 응답한다.
+- 뷰의 크기 조정 및 전체 인터페이스의 레이아웃을 관리한다.
+- 앱에서 다른 뷰 컨트롤러를 포함한 다른 객체(Object)를 조정한다.
+
+**2. 뷰 컨트롤러의 타입**
+1. Content View Controller
+2. Container View Controller (`NavigationViewController`, `TabBarViewController`) 
+
+**3. 생명 주기**
+
+생명 주기에 대해서는 따로 정리를 하도록 하고,  
+여기서는 ViewController.swift 파일에서 확인할 수 있는 `viewDidLoad()`만 알아보도록 한다.
+- `viewDidLoad()` : 뷰 계층을 메모리에 로드한 직후 수행된다. 주로 뷰의 초기화 작업을 담당한다.
+- `viewWillAppear()`
+- `viewDidappear()`
+- `viewWillDisappear()`
+- `viewDidDisappear()`
