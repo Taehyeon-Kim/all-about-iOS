@@ -41,16 +41,17 @@ CMD+SHIFT+L 또는 우측 상단의 `+`버튼을 클릭해서 추가할 수 있�
 
 |   이름  |    관련 클래스   | 설명 |
 | ---- | ---- | ---- |
-|Visual Effect View with Blur|`string`||
-|Map Kit View|`string`||
-|MetalKit View|`string`||
-|GLKit View|`string`||
-|SceneKit View|`string`||
-|SpriteKit View|`string`||
-|ARKit View|`string`||
-|Web View|`string`||
-|WebKit View|`string`||
-|RealityKit View|`string`||
+|Visual Effect View with Blur|``||
+|Visual Effect View with Blur and Vibrancy|``||
+|Map Kit View|``||
+|MetalKit View|``||
+|GLKit View|``||
+|SceneKit View|``||
+|SpriteKit View|``||
+|ARKit View|``||
+|Web View|``||
+|WebKit View|``||
+|RealityKit View|``||
 
 ### SET 4
 
@@ -104,14 +105,14 @@ CMD+SHIFT+L 또는 우측 상단의 `+`버튼을 클릭해서 추가할 수 있�
 |   이름  |    관련 클래스   | 설명 |
 | ---- | ---- | ---- |
 |Object|`string`||
-|Tap Gesture Recognizer|`string`||
-|Pinch Gesture Recognizer|`string`||
-|Rotation Gesture Recognizer|`string`||
-|Swipe Gesture Recognizer|`string`||
-|Pan Gesture Recognizer|`string`||
-|Screen Gesture Recognizer|`string`||
-|Long Press Gesture Recognizer|`string`||
-|Custom Gesture Recognizer|`string`||
+|Tap Gesture Recognizer|``||
+|Pinch Gesture Recognizer|``||
+|Rotation Gesture Recognizer|``||
+|Swipe Gesture Recognizer|``||
+|Pan Gesture Recognizer|``||
+|Screen Gesture Recognizer|``||
+|Long Press Gesture Recognizer|``||
+|Custom Gesture Recognizer|``||
 
 
 
