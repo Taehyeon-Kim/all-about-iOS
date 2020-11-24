@@ -164,5 +164,11 @@ func sceneDidEnterBackground(_ scene: UIScene)
 |  `Launch Image Type`   |   어플리케이션이 실행될 때 사용되는 이미지 파일   |.launchimage|
 
 
+<br>
 
+**`🍏 info.plist`**
+
+**`Information Property List` : A resource containing key-value pairs that identify and configure a bundle.**  
+번들에 대한 설정, 간단하게 말하면 앱의 기본정보를 담아 놓을 수 있는 설정파일이다.  
+`Information Property List에 대한 정리는 따로 하도록 한다.`
 
