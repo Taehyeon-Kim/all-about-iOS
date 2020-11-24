@@ -121,3 +121,48 @@ func sceneDidEnterBackground(_ scene: UIScene)
 - `viewDidappear()`
 - `viewWillDisappear()`
 - `viewDidDisappear()`
+
+<br>
+
+**`🍏 Main.storyboard`**
+
+**정말 간단하게 말해서 스토리보드는 앱의 UI를 디자인 하는 공간이다.**  
+프로젝트를 처음 생성하면 Main.storyboard와 Launch.storyboard 이 2가지의 스토리보드만 존재한다.  
+
+```
+프로젝트 진행 시 하나의 스토리보드에 많은 뷰가 생기기 마련이고 복잡해질 수 밖에 없다.
+스토리보드를 여러 개로 분리하여 사용하는 방법이 좋을 것으로 보인다. (물론 정답은 아님)
+```
+
+<br>
+
+**`🍏 LaunchScreen.storyboard`**
+
+**앱이 처음 실행될 때 표시되는 화면이다.** 이를 스플래시(Splash)화면이라고 부르기도 한다.
+
+
+<br>
+
+**`🍏 /Assets.xcassets`**
+
+**앱의 에셋을 관리하는 폴더이다. 이를 에셋 카탈로그라고 부른다.**  
+에셋과 다양한 디바이스의 속성에 대한 파일의 연결을 통해 앱이 리소스(실행할 때 사용하는 이미지 또는 음악)에 쉽게 접근할 수 있도록 해준다.  
+디바이스 속성은 디바이스의 특징, 사이즈 클래스, 주문형 리소스, 특정 타입의 정보를 포함한다.
+
+**1. 구분**
+- 에셋 카탈로그 폴더
+- 컨텐츠 파일 : 이미지, 음악 등의 리소스 파일
+- JSON 파일 : 해당 속성에 대한 정보를 포함하고 있는 JSON vkdlf
+
+**2. 에셋 카탈로그 종류**
+
+|   종류  |    설명   | 확장자 |
+| ----    | ---- | ---- |
+|    `App Icon Type`  |    앱 아이콘에 사용되는 이미지  |.appiconset|
+|    `Image Set Type`   |   객체가 사용하는 이미지 파일   |.imageset|
+|    `Data Set Type`   |   객체가 사용하는 모든 종류의 파일(실행파일을 제외한 바이너리 파일)   |.dataset|
+|  `Launch Image Type`   |   어플리케이션이 실행될 때 사용되는 이미지 파일   |.launchimage|
+
+
+
+
