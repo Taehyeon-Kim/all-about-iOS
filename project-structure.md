@@ -41,3 +41,60 @@ AppDelegate의 역할이 앱의 생명 주기를 관리하고 앱 상태(App Sta
 하지만 iOS13부터는 'window'의 개념이 'scene`으로 바뀌고' 위의 역할을 더 이상 하지 않게 되었다.
 앱의 생명 주기를 관리하는 것은 뒤에서 설명할 SceneDelegate의 역할이 되었다.
 ```
+<br>
+
+**`🍏 SceneDelegate.swift`**  
+
+**(iOS13~) 프로젝트를 생성하면 SceneDelegate.swift 파일이 자동적으로 생성된다.**  
+iOS, 특히 `iPadOS`에서 멀티 윈도우를 사용할 수 있게 되면서 나오게 되었다고 봐도 좋을 것 같다.
+
+**1. Scene 이란**
+
+[APPLE DOCS - Session](https://developer.apple.com/documentation/uikit/app_and_environment/scenes)에 나와있는 `Scene`의 설명을 보면,  
+`Scene`은 앱 UI의 여러 인스턴스를 동시에 관리하고 리소스를 적절한 UI 인스턴스로 연결하는 것을 알 수 있다.
+
+추가로 DOCS의 내용을 정리하면,
+- `Scene`에는 UI의 한 인스턴스를 표시하기 위한 창(window) 및 뷰 컨트롤러(View Controller)가 포함되어 있다.
+- 각 `Scene`에는 UIkit과 앱 간의 상호 작용을 조정하는데 사용하는 UIWindowSceneDelegate 객체가 있다.
+- `Scene`은 동일한 메모리 및 앱 프로세스 공간을 공유하면서 동시에 실행된다.
+- 이로써, 단일 앱이 여러 `Scene`과 `Scene Delegate Object`를 동시에 활성화할 수 있다.
+
+**2. Scene Delegate의 역할**
+
+UI의 생명 주기(Life Cycle)를 관리하는 역할이 `AppDelegate`에서 `SceneDelegate`로 넘어왔다.
+
+**3. Scene Session 이란**
+
+[APPLE DOCS - Scene Session](https://developer.apple.com/documentation/uikit/app_and_environment/scenes)에 나와있는 설명은 다음과 같다.  
+사용자가 앱에 새로운 `scene`을 추가하거나 프로그래밍적으로 `scene`을 요청하면 시스탬이 `session`객체를 생성하여 그 `scene`을 추적한다.    
+`session`에는 고유한 식별자와 `scene`의 구성 세부 정보가 포함되어 있다.
+
+**4. 사용되는 메서드**
+
+- Scene이 앱에 추가될 때 호출
+```swift
+func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
+```
+- Scene의 연결이 해제될 때 호출, 다시 연결될 수 있음
+```swift
+func sceneDidDisconnect(_ scene: UIScene)
+```
+- Scene과 상호 작용이 시작될 때 호출 (ex. App Switcher에서 선택)
+```swift
+func sceneDidBecomeActive(_ scene: UIScene)
+```
+- Scene과 상호 작용을 중지할 때 호출, Scene이 Background로 진입할 때 호출 (ex.다른 앱 실행)
+```swift
+func sceneWillResignActive(_ scene: UIScene)
+```
+- Scene이 Foreground로 진입할 때 호출 (ex. background - foreground, 처음 활성화 시)
+```swift
+func sceneWillEnterForeground(_ scene: UIScene)
+```
+- Scene이 Background일 때 호출
+```swift
+func sceneDidEnterBackground(_ scene: UIScene)
+```
+
+
+
