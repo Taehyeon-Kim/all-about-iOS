@@ -60,3 +60,53 @@
 |Localizations|`array` of `string`|앱에서 수동으로 처리하는 현지화|
 |Localized resources can be mixed|`boolean`|번들이 프레임 워크에서 지역화 된 문자열 검색을 지원하는지 여부를 나타내는 bool 값|
 |Main nib file base name|`string`|기본 nib 파일 <br> 앱의 기본 사용자 인터페이스 파일 이름|
+
+<br>
+
+### Info.plist - Privacy   
+✓ iOS 10 이후 사진, 위치, 카메라, 캘린더, 블루투스 등을 사용하기 위해서는 사용자의 권한 승인이 필요하다.  
+✓ 권한 승인을 위해 Privacy키를 추가해줘야 한다.
+
+|   키(KEY)  |    타입(TYPE)   | 설명(DESCRIPTION) | 비고(REMARK) |
+| ---- | ---- | ---- | ---- |
+|Privacy - Access to a File Provide Domain Usage Description|`string`|Finder를 열 때와 같이 파일 공급자가 관리하는 파일에 대한 앱 액세스 권한|`macOS 10.15 +`|
+|Privacy - AppleEvents Sending Usage Description|`string`|앱이 Apple 이벤트 전송 기능을 요청하는 이유를 사용자에게 알려주는 메시지|`macOS 10.14 +`|
+|Privacy - Bluetooth Always Usage Description|`string`|앱이 기기의 블루투스 인터페이스를 사용하는 경우||
+|Privacy - Bluetooth Peripheral Usage Description|`string`|앱이 블루투스 주변기기에 연결하는 기능을 요청하는 이유를 사용자에게 알려주는 메시지|`Deprecated` `iOS13 이전의 배포 대상이 있는 경우 이 키가 필요`|
+|Privacy - Calendars Usage Description|`string`|앱이 사용자의 캘린더 데이터에 대한 액세스를 요청하는 이유를 사용자에게 알려주는 메시지||
+|Privacy - Camera Usage Description|`string`|사용자에게 앱이 기기의 카메라에 대한 액세스를 요청하는 이유를 알려주는 메시지||
+|Privacy - Contacts Usage Description|`string`|앱이 사용자의 연락처에 대한 액세스를 요청하는 이유를 사용자에게 알려주는 메시지||
+|Privacy - Desktop Folder Usage Description|`string`|앱이 iTunes를 통해 파일을 공유하는지 여부를 나타내는 bool 값||
+|Privacy - Documents Folder Usage Description|`string`|앱이 사용자의 데스크톱 폴더에 액세스해야하는 이유를 사용자에게 알려주는 메시지|`macOS 10.15 +`|
+|Privacy - Downloads Folder Usage Description|`string`|앱이 사용자의 다운로드 폴더에 액세스해야하는 이유를 사용자에게 알려주는 메시지|`macOS 10.15 +`|
+|Privacy - Driver Extension Usage Description|||
+|Privacy - Face ID Usage Description|`string`|앱이 Face ID로 인증하는 기능을 요청하는 이유를 사용자에게 알려주는 메시지||
+|Privacy - File Provider Presence Usage Description|`string`|다른 앱이 관리하는 파일에 액세스 할 때 앱에 알려야하는 이유를 사용자에게 알려주는 메시지|`macOS 10.15 +`|
+|Privacy - Health Records Usage Description|`string`|앱에서 사용자의 임상 기록에 액세스하는 API를 사용하는 경우 필요||
+|Privacy - Health Share Usage Description|`string`|앱이 사용자의 건강 데이터에 액세스하는 API를 사용하는 경우 필요|
+|Privacy - Health Update Usage Description|`string`|앱에서 사용자의 건강 데이터를 업데이트하는 API를 사용하는 경우 필요||
+|Privacy - HomeKit Usage Description|`string`|앱이 사용자의 HomeKit 구성 데이터에 액세스하는 API를 사용하는 경우 필요||
+|Privacy - Local Network Usage Description|`string`|앱이 로컬 네트워크에 대한 액세스를 요청하는 이유를 사용자에게 알려주는 메시지||
+|Privacy - Location Always and When In Use Usage Description|`string`|iOS 앱이 항상 사용자의 위치 정보에 액세스하는 API를 사용하는 경우|
+|Privacy - Location Always Usage Description|`string`|iOS 앱이 항상 사용자 위치에 액세스하고 iOS 11 이전의 대상에 배포하는 API를 사용하는 경우 필요|
+|Privacy - Location Default Accuracy Reduced|`boolean`|iOS 14부터 위치 공유의 정밀도에 대한 선택 가능|`iOS 14.0 +`|
+|Privacy - Location Temporary Usage Description Dictionary|`dictionary`|위치 공유를 위한 일회성 권한 (예 : 한 번 허용)을 허용 하도록 사용자에게 요청|
+|Privacy - Location Usage Description|`string`|macOS 앱에서 사용자의 위치 정보에 액세스하는 API를 사용하는 경우 필요|`macOS 10.14 +`|
+|Privacy - Location When In Use Usage Description|`string`|iOS 앱이 앱을 사용하는 동안 사용자의 위치 정보에 액세스하는 API를 사용하는 경우 필요|
+|Privacy - Media Library Usage Description|`string`|앱에서 사용자의 미디어 라이브러리에 액세스하는 API를 사용하는 경우 필요|
+|Privacy - Microphone Usage Description|`string`|앱이 기기의 마이크에 액세스하는 API를 사용하는 경우 필요|
+|Privacy - Motion Usage Description|`string`|장치의 모션 데이터를 액세스하는 응용 프로그램에서 사용하는 API를 포함하는 경우 필요| `CMSensorRecorder`, `CMPedometer`, `CMMotionActivityManager`, `CMMovementDisorderManager` 등 이 키들을 포함하지 않으면 모션 데이터에 액세스하려고 할 때 앱이 충돌|
+|Privacy - Music Usage Description|`string`|음악 사용 권한 요청시 필요|
+|Privacy - Network Volumes Usage Description|`string`|앱이 네트워크 볼륨의 파일에 액세스해야하는 이유를 사용자에게 알려주는 메시지|`macOS 10.15 +`|
+|Privacy - NFC Scan Usage Description|`string`|앱에서 NFC 하드웨어에 액세스하는 API를 사용하는 경우 필요|
+|Privacy - Photo Library Additions Usage Description|`string`|앱에서 사용자의 사진 라이브러리에 대한 쓰기 권한이있는 API를 사용하는 경우 필요|`추가`|
+|Privacy - Photo Library Usage Description|`string`|앱이 사용자의 사진 라이브러리에 대한 읽기 또는 쓰기 권한이있는 API를 사용하는 경우 필요|`사용`|
+|Privacy - Reminders Usage Description|`string`|앱이 사용자의 미리 알림에 액세스하는 API를 사용하는 경우 필요|
+|Privacy - Removable Volumes Usage Description|`string`|앱이 이동식 볼륨(디스크)의 파일에 액세스해야하는 이유를 사용자에게 알려주는 메시지|`macOS 10.15 +`|
+|Privacy - Siri Usage Description|`string`|앱이 사용자 데이터를 Siri로 보내는 API를 사용하는 경우 필요|
+|Privacy - Speech Recognition Usage Description|`string`|앱에서 사용자 데이터를 Apple의 음성 인식 서버로 보내는 API를 사용하는 경우 필요|
+|Privacy - System Administration Usage Description|`string`|앱에서 시스템 구성을 조작하는 API를 사용하는 경우이 키가 필요|`macOS 10.14 +`|
+|Privacy - System Extension Usage Description|||
+|Privacy - Tracking Usage Description|`string`|앱이 사용자 또는 장치를 추적하기 위해 데이터 사용 권한을 요청하는 이유를 사용자에게 알리는 메시지|
+|Privacy - TV Provider Usage Description|`string`|||
+|Privacy - Video Subscriber Account Usage Description|`string`|앱에서 사용자의 TV 공급자 계정에 액세스하는 API를 사용하는 경우이 키가 필요|`tvOS 12+`|
