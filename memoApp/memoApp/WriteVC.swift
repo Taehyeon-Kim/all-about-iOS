@@ -29,10 +29,10 @@ class WriteVC: UIViewController {
         
         // 게임 시작하면 튜토리얼하는 것처럼 안내를 나타내고 싶었음
         // 근데 글쓸때마다 매번 이렇게 하는 건 비효율적일듯..
-        let alert = UIAlertController(title: "안내", message: "제목과 내용을 입력하고 완료 버튼을 누르면 메모가 작성됩니다.", preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: "안내", message: "제목과 내용을 입력하고 완료 버튼을 누르면 메모가 작성됩니다.", preferredStyle: UIAlertController.Style.alert)
+//        let okAction = UIAlertAction(title: "OK", style: .default)
+//        alert.addAction(okAction)
+//        present(alert, animated: true, completion: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

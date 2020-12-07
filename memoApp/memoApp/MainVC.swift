@@ -78,9 +78,22 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    // 왼쪽 스와이프
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let pinAction = UIContextualAction(style: .normal, title: "고정", handler: { (ac:UIContextualAction, UIView, success: (Bool) -> Void) in
             
-        }
+        })
+        
+        return UISwipeActionsConfiguration(actions: [pinAction])
+    }
+    
+    
+    // 오른쪽 스와이프
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "삭제", handler: { (ac:UIContextualAction, UIView, success: (Bool) -> Void) in
+            
+        })
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
