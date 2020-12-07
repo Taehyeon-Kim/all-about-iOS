@@ -42,20 +42,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoCell" id="guc-J0-Sks" customClass="PostTableViewCell" customModule="memoApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="33.5"/>
+                                        <rect key="frame" x="20" y="55.5" width="374" height="33"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="guc-J0-Sks" id="8cQ-e0-yxx">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="33.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="33"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-HG-TeG">
-                                                    <rect key="frame" x="6" y="6" width="29.5" height="21.5"/>
+                                                    <rect key="frame" x="6" y="6" width="29.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7c-fj-AF1">
-                                                    <rect key="frame" x="47.5" y="6" width="314.5" height="21.5"/>
+                                                    <rect key="frame" x="47.5" y="6" width="314.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -74,6 +74,7 @@
                                         <connections>
                                             <outlet property="contentLabel" destination="k7c-fj-AF1" id="USv-pQ-iV3"/>
                                             <outlet property="titleLabel" destination="Pt2-HG-TeG" id="4aU-EB-uMp"/>
+                                            <segue destination="1Di-nM-5gt" kind="show" identifier="goToDetailVC" id="82Y-kF-tUl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -103,7 +104,7 @@
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="118.52678571428571"/>
         </scene>
-        <!--WriteVC-->
+        <!--메모 작성-->
         <scene sceneID="Ntr-2E-H4r">
             <objects>
                 <viewController id="fbr-Qp-k39" customClass="WriteVC" customModule="memoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +122,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QSg-Lz-A3m"/>
@@ -136,7 +137,7 @@
                             <constraint firstItem="7iu-VL-Aml" firstAttribute="leading" secondItem="QSg-Lz-A3m" secondAttribute="leading" constant="20" id="z11-72-yor"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ubU-lA-QSf">
+                    <navigationItem key="navigationItem" title="메모 작성" id="ubU-lA-QSf">
                         <barButtonItem key="rightBarButtonItem" title="완료" id="UuV-V4-fbV">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -152,6 +153,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sr8-uQ-phg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2013.0434782608697" y="118.52678571428571"/>
+        </scene>
+        <!--메모 보기-->
+        <scene sceneID="4GR-hh-7wh">
+            <objects>
+                <viewController id="1Di-nM-5gt" customClass="DetailVC" customModule="memoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bHt-bz-EcZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="내용을 입력해주세요." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-wl-6Dn">
+                                <rect key="frame" x="20" y="151" width="374" height="711"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rH-dh-fcl">
+                                <rect key="frame" x="20" y="108" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aA8-xt-cGT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7rH-dh-fcl" firstAttribute="top" secondItem="aA8-xt-cGT" secondAttribute="top" constant="20" id="0mC-jn-GnX"/>
+                            <constraint firstItem="7rH-dh-fcl" firstAttribute="leading" secondItem="aA8-xt-cGT" secondAttribute="leading" constant="20" id="IW5-8W-mvo"/>
+                            <constraint firstItem="aA8-xt-cGT" firstAttribute="trailing" secondItem="Vdc-wl-6Dn" secondAttribute="trailing" constant="20" id="M8y-SA-SsO"/>
+                            <constraint firstItem="aA8-xt-cGT" firstAttribute="trailing" secondItem="7rH-dh-fcl" secondAttribute="trailing" constant="20" id="Qve-AA-1iY"/>
+                            <constraint firstItem="Vdc-wl-6Dn" firstAttribute="bottom" secondItem="aA8-xt-cGT" secondAttribute="bottom" id="ik8-b8-LA3"/>
+                            <constraint firstItem="Vdc-wl-6Dn" firstAttribute="leading" secondItem="aA8-xt-cGT" secondAttribute="leading" constant="20" id="lQI-hz-06k"/>
+                            <constraint firstItem="Vdc-wl-6Dn" firstAttribute="top" secondItem="7rH-dh-fcl" secondAttribute="bottom" constant="22" id="uFn-MM-YZQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="메모 보기" id="XaQ-1L-9Bv"/>
+                    <connections>
+                        <outlet property="detailContentView" destination="Vdc-wl-6Dn" id="wuh-s3-MIr"/>
+                        <outlet property="detailTitleLabel" destination="7rH-dh-fcl" id="5us-W7-GIf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="inY-mJ-dux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="818"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P8U-zY-0dP">
