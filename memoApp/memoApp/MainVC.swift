@@ -38,7 +38,7 @@ class MainVC: UIViewController, writeDataDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // view가 다시 나타날때 데이터 리로드
+        // view가 다시 나타날때 tableView 데이터 리로드
         tableView.reloadData()
     }
 
@@ -91,9 +91,11 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     // 오른쪽 스와이프
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "삭제", handler: { (ac:UIContextualAction, UIView, success: (Bool) -> Void) in
-            
+            self.memo.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         })
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
+
