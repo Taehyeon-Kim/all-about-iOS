@@ -42,24 +42,27 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoCell" id="guc-J0-Sks" customClass="PostTableViewCell" customModule="memoApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="33.5"/>
+                                        <rect key="frame" x="20" y="55.5" width="374" height="33"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="guc-J0-Sks" id="8cQ-e0-yxx">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="33.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="33"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-HG-TeG">
-                                                    <rect key="frame" x="6" y="6" width="29.5" height="21.5"/>
+                                                    <rect key="frame" x="6" y="6" width="29.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7c-fj-AF1">
-                                                    <rect key="frame" x="47.5" y="6" width="314.5" height="21.5"/>
+                                                    <rect key="frame" x="47.5" y="6" width="314.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x1l-5N-FXO">
+                                                    <rect key="frame" x="305" y="1" width="51" height="31"/>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Pt2-HG-TeG" firstAttribute="leading" secondItem="8cQ-e0-yxx" secondAttribute="leading" constant="6" id="C4I-ae-OwI"/>
@@ -67,7 +70,9 @@
                                                 <constraint firstItem="k7c-fj-AF1" firstAttribute="leading" secondItem="Pt2-HG-TeG" secondAttribute="trailing" constant="12" id="G58-lK-2lZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="Pt2-HG-TeG" secondAttribute="bottom" constant="6" id="KGX-Zo-ngg"/>
                                                 <constraint firstAttribute="trailing" secondItem="k7c-fj-AF1" secondAttribute="trailing" constant="12" id="SUL-xd-bWh"/>
+                                                <constraint firstItem="x1l-5N-FXO" firstAttribute="centerY" secondItem="8cQ-e0-yxx" secondAttribute="centerY" id="Ybf-5D-h0a"/>
                                                 <constraint firstItem="k7c-fj-AF1" firstAttribute="centerY" secondItem="8cQ-e0-yxx" secondAttribute="centerY" id="ikq-A0-ctT"/>
+                                                <constraint firstAttribute="trailing" secondItem="x1l-5N-FXO" secondAttribute="trailing" constant="20" id="lMc-pK-kLL"/>
                                                 <constraint firstItem="Pt2-HG-TeG" firstAttribute="baseline" secondItem="k7c-fj-AF1" secondAttribute="baseline" id="pZX-qq-HcP"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -175,6 +180,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieS-Ym-3f9">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="trash" catalog="system" id="jFu-dN-rVg"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kiN-f7-Lqd"/>
+                                    <barButtonItem title="Item" image="pencil.circle" catalog="system" id="v61-l8-dVy"/>
+                                </items>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aA8-xt-cGT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -196,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inY-mJ-dux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="818"/>
+            <point key="canvasLocation" x="2013" y="843"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P8U-zY-0dP">
@@ -219,7 +234,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

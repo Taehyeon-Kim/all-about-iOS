@@ -29,13 +29,13 @@ class DetailVC: UIViewController {
         if detailTitleLabel != nil {
             detailTitleLabel?.removeFromSuperview()
             detailTitleLabel = nil
-            print("detailTitleLabel deallocation")
+            
         }
         
         if detailContentView != nil {
             detailContentView?.removeFromSuperview()
             detailContentView = nil
-            print("detailContentView deallocation")
+            
         }
     }
 }
