@@ -1,0 +1,6 @@
+framework module Pods_Memo_Realm {
+  umbrella header "Pods-Memo+Realm-umbrella.h"
+
+  export *
+  module * { export * }
+}
